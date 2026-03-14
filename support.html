@@ -102,7 +102,7 @@
 
     <div class="contact-card">
       <div class="label">Email</div>
-      <a href="mailto:support@carwashfinder.app">support@carwashfinder.app</a>
+      <a href="mailto:carwashfinder.contact@gmail.com">carwashfinder.contact@gmail.com</a>
       <p style="font-size:13px; color:rgba(255,255,255,0.4); margin-top:4px; margin-bottom:0">Reponse sous 48h</p>
     </div>
 
@@ -136,9 +136,18 @@
     </div>
   </div>
 
-  <footer>&copy; 2026 Sabri Arrar. Tous droits reserves.</footer>
+  <footer>&copy; 2026 Sabri A. Tous droits reserves.</footer>
 
   <script>
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) {
+        document.body.style.animation = 'none';
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'none';
+      }
+      document.body.classList.remove('leaving');
+    });
+
     document.querySelectorAll('.page-link').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();

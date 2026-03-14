@@ -222,20 +222,33 @@
     </div>
   </div>
 
-  <footer>&copy; 2026 Sabri Arrar. Tous droits reserves.</footer>
+  <footer>&copy; 2026 Sabri A. Tous droits reserves.</footer>
 
   <script>
-    // Floating particles
+    // Floating particles (only once)
     const container = document.getElementById('particles');
-    for (let i = 0; i < 20; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
-      p.style.animationDuration = (8 + Math.random() * 12) + 's';
-      p.style.animationDelay = (Math.random() * 10) + 's';
-      container.appendChild(p);
+    if (!container.dataset.init) {
+      container.dataset.init = '1';
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+        p.style.animationDuration = (8 + Math.random() * 12) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        container.appendChild(p);
+      }
     }
+
+    // Fix back button: restore visibility instantly on bfcache
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) {
+        document.body.style.animation = 'none';
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'none';
+      }
+      document.body.classList.remove('leaving');
+    });
 
     // Page transitions
     document.querySelectorAll('.page-link').forEach(link => {

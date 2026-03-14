@@ -73,7 +73,7 @@
 
     <div class="fade-section">
       <h2>1. Introduction</h2>
-      <p>Carwash Finder ("l'Application") est editee par Sabri Arrar. Nous respectons votre vie privee et nous engageons a proteger vos donnees personnelles. Cette politique explique quelles donnees nous collectons, pourquoi et comment nous les utilisons.</p>
+      <p>Carwash Finder ("l'Application") est editee par Sabri A.. Nous respectons votre vie privee et nous engageons a proteger vos donnees personnelles. Cette politique explique quelles donnees nous collectons, pourquoi et comment nous les utilisons.</p>
     </div>
 
     <div class="fade-section">
@@ -149,13 +149,22 @@
     <div class="fade-section">
       <h2>11. Contact</h2>
       <p>Pour toute question relative a vos donnees personnelles :<br>
-      Email : <a href="mailto:support@carwashfinder.app">support@carwashfinder.app</a></p>
+      Email : <a href="mailto:carwashfinder.contact@gmail.com">carwashfinder.contact@gmail.com</a></p>
     </div>
   </div>
 
-  <footer>&copy; 2026 Sabri Arrar. Tous droits reserves.</footer>
+  <footer>&copy; 2026 Sabri A. Tous droits reserves.</footer>
 
   <script>
+    window.addEventListener('pageshow', e => {
+      if (e.persisted) {
+        document.body.style.animation = 'none';
+        document.body.style.opacity = '1';
+        document.body.style.transform = 'none';
+      }
+      document.body.classList.remove('leaving');
+    });
+
     document.querySelectorAll('.page-link').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
