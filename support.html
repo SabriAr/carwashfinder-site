@@ -12,9 +12,26 @@
       color: #fff;
       padding: 24px;
       line-height: 1.7;
+      animation: pageIn 0.5s ease-out;
+    }
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body.leaving {
+      animation: pageOut 0.35s ease-in forwards;
+    }
+    @keyframes pageOut {
+      to { opacity: 0; transform: translateY(-12px); }
     }
     .container { max-width: 640px; margin: 0 auto; }
-    a.back { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 14px; }
+    a.back {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
     a.back:hover { color: #fff; }
     h1 { font-size: 28px; font-weight: 900; margin: 24px 0 8px; color: #fff; }
     .sub { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
@@ -26,6 +43,11 @@
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 16px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .contact-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
     }
     .contact-card a {
       color: #fff;
@@ -48,6 +70,22 @@
       border-radius: 12px;
       padding: 16px;
       margin-bottom: 8px;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: faqIn 0.4s ease-out forwards;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .faq-item:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+    .faq-item:nth-child(1) { animation-delay: 0.2s; }
+    .faq-item:nth-child(2) { animation-delay: 0.3s; }
+    .faq-item:nth-child(3) { animation-delay: 0.4s; }
+    .faq-item:nth-child(4) { animation-delay: 0.5s; }
+    .faq-item:nth-child(5) { animation-delay: 0.6s; }
+    @keyframes faqIn {
+      to { opacity: 1; transform: translateY(0); }
     }
     .faq-q { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: #fff; }
     .faq-a { font-size: 14px; color: rgba(255,255,255,0.6); }
@@ -56,7 +94,7 @@
 </head>
 <body>
   <div class="container">
-    <a class="back" href="index.html">&larr; Retour</a>
+    <a class="back page-link" href="index.html">&larr; Retour</a>
     <h1>Support</h1>
     <p class="sub">Besoin d'aide avec Carwash Finder ? Nous sommes la pour vous.</p>
 
@@ -65,7 +103,7 @@
     <div class="contact-card">
       <div class="label">Email</div>
       <a href="mailto:support@carwashfinder.app">support@carwashfinder.app</a>
-      <p style="font-size:13px; color:#9CA3AF; margin-top:4px; margin-bottom:0">Reponse sous 48h</p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.4); margin-top:4px; margin-bottom:0">Reponse sous 48h</p>
     </div>
 
     <div class="faq">
@@ -99,5 +137,16 @@
   </div>
 
   <footer>&copy; 2026 Sabri Arrar. Tous droits reserves.</footer>
+
+  <script>
+    document.querySelectorAll('.page-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.body.classList.add('leaving');
+        setTimeout(() => { window.location.href = href; }, 350);
+      });
+    });
+  </script>
 </body>
 </html>
