@@ -42,25 +42,37 @@
     a { color: rgba(255,255,255,0.9); }
     footer { margin-top: 48px; font-size: 12px; color: rgba(255,255,255,0.3); text-align: center; }
 
-    /* Fade-in sections */
-    .fade-section {
+    /* Card sections */
+    .card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
       opacity: 0;
-      transform: translateY(16px);
-      animation: sectionIn 0.5s ease-out forwards;
+      transform: translateY(12px);
+      animation: cardIn 0.4s ease-out forwards;
+      transition: background 0.2s, transform 0.2s;
     }
-    .fade-section:nth-child(1) { animation-delay: 0.1s; }
-    .fade-section:nth-child(2) { animation-delay: 0.15s; }
-    .fade-section:nth-child(3) { animation-delay: 0.2s; }
-    .fade-section:nth-child(4) { animation-delay: 0.25s; }
-    .fade-section:nth-child(5) { animation-delay: 0.3s; }
-    .fade-section:nth-child(6) { animation-delay: 0.35s; }
-    .fade-section:nth-child(7) { animation-delay: 0.4s; }
-    .fade-section:nth-child(8) { animation-delay: 0.45s; }
-    .fade-section:nth-child(9) { animation-delay: 0.5s; }
-    .fade-section:nth-child(10) { animation-delay: 0.55s; }
-    .fade-section:nth-child(11) { animation-delay: 0.6s; }
-    .fade-section:nth-child(12) { animation-delay: 0.65s; }
-    @keyframes sectionIn {
+    .card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.15s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.25s; }
+    .card:nth-child(5) { animation-delay: 0.3s; }
+    .card:nth-child(6) { animation-delay: 0.35s; }
+    .card:nth-child(7) { animation-delay: 0.4s; }
+    .card:nth-child(8) { animation-delay: 0.45s; }
+    .card:nth-child(9) { animation-delay: 0.5s; }
+    .card:nth-child(10) { animation-delay: 0.55s; }
+    .card:nth-child(11) { animation-delay: 0.6s; }
+    .card h2 { margin: 0 0 8px; font-size: 16px; }
+    .card p, .card ul { margin-bottom: 4px; }
+    .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+    @keyframes cardIn {
       to { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -71,12 +83,12 @@
     <h1>Politique de confidentialite</h1>
     <p class="date">Derniere mise a jour : 14 mars 2026</p>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>1. Introduction</h2>
-      <p>Carwash Finder ("l'Application") est editee par Sabri A.. Nous respectons votre vie privee et nous engageons a proteger vos donnees personnelles. Cette politique explique quelles donnees nous collectons, pourquoi et comment nous les utilisons.</p>
+      <p>Carwash Finder ("l'Application") est editee par Sabri A. Nous respectons votre vie privee et nous engageons a proteger vos donnees personnelles. Cette politique explique quelles donnees nous collectons, pourquoi et comment nous les utilisons.</p>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>2. Donnees collectees</h2>
       <p>L'Application collecte les donnees suivantes :</p>
       <ul>
@@ -86,7 +98,7 @@
       </ul>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>3. Donnees NON collectees</h2>
       <ul>
         <li>Nom, prenom, email, numero de telephone</li>
@@ -95,7 +107,7 @@
       </ul>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>4. Utilisation des donnees</h2>
       <p>Les donnees collectees sont utilisees exclusivement pour :</p>
       <ul>
@@ -105,7 +117,7 @@
       </ul>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>5. Services tiers</h2>
       <p>L'Application utilise les services tiers suivants :</p>
       <ul>
@@ -116,17 +128,17 @@
       </ul>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>6. Publicites</h2>
       <p>L'Application affiche des publicites via Google AdMob. Avant toute collecte d'identifiants publicitaires, l'Application vous demande votre consentement via la fenetre App Tracking Transparency (ATT) d'Apple. Si vous refusez, seules des annonces non personnalisees sont affichees.</p>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>7. Stockage et securite</h2>
       <p>Vos donnees sont stockees de maniere securisee sur les serveurs Supabase (chiffrement en transit et au repos). L'identifiant d'appareil est stocke localement dans le Secure Store de votre appareil.</p>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>8. Vos droits (RGPD)</h2>
       <p>Vous disposez des droits suivants :</p>
       <ul>
@@ -136,17 +148,17 @@
       </ul>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>9. Conservation</h2>
       <p>Vos donnees sont conservees tant que vous utilisez l'application. Elles sont supprimees immediatement et definitivement lorsque vous utilisez la fonction "Supprimer mes donnees".</p>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>10. Modifications</h2>
       <p>Cette politique peut etre mise a jour. La date de derniere modification est indiquee en haut de cette page.</p>
     </div>
 
-    <div class="fade-section">
+    <div class="card">
       <h2>11. Contact</h2>
       <p>Pour toute question relative a vos donnees personnelles :<br>
       Email : <a href="mailto:carwashfinder.contact@gmail.com">carwashfinder.contact@gmail.com</a></p>
