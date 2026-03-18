@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carwash Finder — Voir ce carwash</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; background: #07553B; color: #fff; text-align: center; padding: 40px 20px; margin: 0; }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    p { font-size: 16px; opacity: 0.85; margin-bottom: 30px; }
+    .btn { display: inline-block; background: #fff; color: #07553B; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; margin: 8px; }
+    .btn-outline { background: transparent; border: 2px solid #fff; color: #fff; }
+    .logo { width: 80px; height: 80px; border-radius: 18px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <img src="icon.png" alt="Carwash Finder" class="logo">
+  <h1 id="carwash-name">Carwash</h1>
+  <p>Quelqu'un t'a partagé un carwash via Carwash Finder</p>
+  <a id="open-app" class="btn" href="#">Ouvrir dans l'app</a>
+  <br>
+  <a class="btn btn-outline" href="https://apps.apple.com/app/id6760556666">Télécharger l'app</a>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const lat = params.get('lat');
+    const lon = params.get('lon');
+    const name = params.get('name') || 'Carwash';
+
+    document.getElementById('carwash-name').textContent = decodeURIComponent(name);
+
+    const deepLink = `carwashfinder://carwash?lat=${lat}&lon=${lon}&name=${encodeURIComponent(name)}`;
+    document.getElementById('open-app').href = deepLink;
+
+    // Try to open app automatically
+    if (lat && lon) {
+      window.location.href = deepLink;
+    }
+  </script>
+</body>
+</html>
