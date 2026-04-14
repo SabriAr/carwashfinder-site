@@ -83,7 +83,7 @@
   <div class="container">
     <a class="back page-link" href="index.html">&larr; Retour</a>
     <h1>Politique de confidentialité</h1>
-    <p class="date">Dernière mise à jour : 14 mars 2026</p>
+    <p class="date">Dernière mise à jour : 14 avril 2026</p>
 
     <div class="cards">
     <div class="card">
@@ -95,9 +95,19 @@
       <h2>2. Données collectées</h2>
       <p>L'Application collecte les données suivantes :</p>
       <ul>
-        <li><strong>Identifiant d'appareil anonyme</strong> : un identifiant unique généré aléatoirement, non lié à votre identité. Il permet de gérer vos votes, favoris et contributions.</li>
-        <li><strong>Position géographique</strong> : utilisée uniquement pour centrer la carte et afficher les stations de lavage à proximité. Votre position n'est jamais stockée sur nos serveurs.</li>
-        <li><strong>Contributions volontaires</strong> : avis, notes, photos et suggestions que vous choisissez de partager.</li>
+        <li><strong>Identifiant d'appareil stable</strong> : un identifiant unique généré localement et stocké dans le Secure Store de votre appareil. Il n'est pas lié à votre identité, mais il est envoyé avec chaque contribution (vote, favori, avis, signalement, ajout ou suggestion de carwash) et reste le même tant que vous n'effacez pas l'application. Il sert à rattacher vos contributions pour vous permettre ensuite de les supprimer.</li>
+        <li><strong>Position géographique</strong> : utilisée pour centrer la carte et afficher les stations à proximité. Elle est également envoyée avec les carwashs que vous ajoutez à la communauté (coordonnées de la station).</li>
+        <li><strong>Contributions volontaires</strong> : avis texte + note en étoiles, votes pour/contre, favoris, nouveaux carwashs ajoutés, suggestions de mise à jour, signalements. La version 1.0.1 n'inclut pas d'envoi de photos.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2 bis. Contenu public / contenu privé</h2>
+      <p>Parmi les contributions :</p>
+      <ul>
+        <li><strong>Publiques dans l'app</strong> : les avis (texte + étoiles) sont visibles par les autres utilisateurs. Les nouveaux carwashs ajoutés par la communauté peuvent apparaître sur la carte après un dédoublonnage automatique côté serveur.</li>
+        <li><strong>Non publiées</strong> : les suggestions de mise à jour et les signalements ne sont pas affichés dans l'app. Ils sont uniquement utilisés pour la modération.</li>
+        <li><strong>Modération</strong> : chaque avis et chaque carwash peut être signalé via l'icône drapeau. Les contenus inappropriés sont supprimés manuellement après signalement, et les contributeurs abusifs peuvent être bloqués côté serveur.</li>
       </ul>
     </div>
 
@@ -133,7 +143,7 @@
 
     <div class="card">
       <h2>6. Publicités</h2>
-      <p>L'Application affiche des publicités via Google AdMob. Avant toute collecte d'identifiants publicitaires, l'Application vous demande votre consentement via la fenêtre App Tracking Transparency (ATT) d'Apple. Si vous refusez, seules des annonces non personnalisées sont affichées.</p>
+      <p>L'Application affiche des publicités via Google AdMob. Sur iOS, avant toute utilisation de l'identifiant publicitaire à des fins de suivi, l'Application vous demande votre consentement via la fenêtre App Tracking Transparency (ATT) d'Apple. Si vous refusez, seules des annonces non personnalisées sont affichées.</p>
     </div>
 
     <div class="card">
@@ -146,7 +156,7 @@
       <p>Vous disposez des droits suivants :</p>
       <ul>
         <li><strong>Accès</strong> : vous pouvez consulter vos contributions dans l'application</li>
-        <li><strong>Suppression</strong> : vous pouvez supprimer toutes vos données depuis Réglages > Supprimer mes données</li>
+        <li><strong>Suppression</strong> : vous pouvez supprimer toutes vos données depuis Réglages &gt; Supprimer mes données. Cette action supprime à la fois les lignes en base (avis, votes, favoris, contributions, signalements) et les fichiers éventuellement stockés dans notre stockage objet.</li>
         <li><strong>Portabilité</strong> : vous pouvez exporter vos données depuis l'application</li>
       </ul>
     </div>
